@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<h4>Enter username to export CSV</h4>
+	{% if error %}
+		<p class=error><strong>Error:</strong> {{ error }}
+	{% endif %}
+	
+	<form action="{{ url_for('projects') }}" method=post>
+    {{ form.hidden_tag() }}
+ 
+    {{ form.username.label }}
+    {{ form.username }}
+ 
+    {{ form.submit }}
+  </form>
+{% endblock %}
