@@ -16,7 +16,7 @@ class ProjectForm(Form):
 app = Flask(__name__)
 app.secret_key = "mysuperdupersecretkey"
 
-@app.route('/projects', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def projects():
 	form = ProjectForm()
 	
