@@ -1,4 +1,7 @@
+venv/
 .project
 *.pyc
 *.pyo
 *~
+*.csv
+*.txt
