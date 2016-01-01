@@ -1,17 +1,20 @@
 {% extends "layout.html" %}
 
 {% block body %}
-	<h4>Enter username to export CSV</h4>
-	{% if error %}
-		<p class=error><strong>Error:</strong> {{ error }}
-	{% endif %}
 	
-	<form action="{{ url_for('projects') }}" method=post>
-    {{ form.hidden_tag() }}
- 
-    {{ form.username.label }}
-    {{ form.username }}
- 
-    {{ form.submit }}
-  </form>
+<h2> Ravelry Pattern Exporter</h2>
+
+<h4>Enter a Ravelry username to export projects to a CSV file.</h4>
+
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+	
+<form action="{{ url_for('projects') }}" method=post>
+{{ form.hidden_tag() }}
+{{ form.username.label }}
+{{ form.username }}
+{{ form.submit }}
+</form>
+
 {% endblock %}
